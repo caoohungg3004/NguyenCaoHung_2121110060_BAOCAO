@@ -1,0 +1,6 @@
+<script>
+    for (p = 1; p <= 241; p++) 
+    { 
+        var s = "INSERT INTO `files_related_morphs`(`file_id`, `related_id`, `related_type`, `field`, `order`) VALUES ('" + Math.floor(Math.random() * (11 - 1 + 1) + 1) + "','" + p + "','api::product.product','image','2');"; 
+        document.write(s) }
+</script>
