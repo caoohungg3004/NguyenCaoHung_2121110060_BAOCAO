@@ -1,4 +1,10 @@
 <?php
+///thuvienphantrang
+
+use Illuminate\Pagination\CursorPaginator;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
 use App\Http\Controllers\backend\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +21,12 @@ use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\backend\TopicController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\SliderController;
+use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\IpmortControllerr;
+
+
+
+
 
 
 Route::get('/',[SiteController::class,'index'])->name("site.index");
@@ -55,11 +67,19 @@ Route::prefix('admin')->middleware('loginadmin')->group(function() {});
 */
 
 Route::get('/', [SiteController::class, 'index'])->name('site.home');
+Route::get('/gio-hang', [SiteController::class, 'cart'])->name('site.cart');
 
 Route::prefix('admin') ->middleware('loginadmin')->group(function(){
 {
+    
     Route::get('/logout',[AuthController::class,'logout'])->name('admin.logout');
     Route::get('/', [DashboardController::class,'index'])->name('admin.dashboard');
+    //banner
+
+    //productsale
+
+    //product
+    //brand
     Route::resource('brand', BrandController::class);
     Route::resource('brand', BrandController::class);
     Route::get('brand_trash',[BrandController::class,'trash'])->name('brand.trash');
@@ -92,13 +112,21 @@ Route::prefix('admin') ->middleware('loginadmin')->group(function(){
     Route::get('contact/restore/{contact}',[ContactController::class,'restore'])->name('contact.restore');
     Route::get('contact/destroy/{contact}',[ContactController::class,'destroy'])->name('contact.destroy');
 
-    //menu
+   //menu
     Route::resource('menu', MenuController::class);
     Route::get('menu_trash',[MenuController::class,'trash'])->name('menu.trash');
     Route::get('menu/status/{menu}',[MenuController::class,'status'])->name('menu.status');
     Route::get('menu/delete/{menu}',[MenuController::class,'delete'])->name('menu.delete');
     Route::get('menu/restore/{menu}',[MenuController::class,'restore'])->name('menu.restore');
     Route::get('menu/destroy/{menu}',[MenuController::class,'destroy'])->name('menu.destroy');
+
+    //customer
+   Route::resource('customer', CustomerController::class);
+   Route::get('customer_trash',[CustomerController::class,'trash'])->name('customer.trash');
+   Route::get('customer/status/{customer}',[CustomerController::class,'status'])->name('customer.status');
+   Route::get('customer/delete/{customer}',[CustomerController::class,'delete'])->name('customer.delete');
+   Route::get('customer/restore/{customer}',[CustomerController::class,'restore'])->name('customer.restore');
+   Route::get('customer/destroy/{customer}',[CustomerController::class,'destroy'])->name('customer.destroy');
 
     //order
     Route::resource('order', OrderController::class);
@@ -147,11 +175,19 @@ Route::prefix('admin') ->middleware('loginadmin')->group(function(){
     Route::get('user/delete/{user}',[UserController::class,'delete'])->name('user.delete');
     Route::get('user/restore/{user}',[UserController::class,'restore'])->name('user.restore');
     Route::get('user/destroy/{user}',[UserController::class,'destroy'])->name('user.destroy');
-
+    // 
+    route::prefix('import')->group(function () {
+        Route::get('/',[ImportController::class, 'index'])
+        ->name('import.index');
+        Route::get('selectproduct',[ImportController::class,'selectproduct'])
+         ->name('import.selectproduct');
+         Route::get('storeimport',[ImportController::class, 'storeimport'])
+         ->name('import.storeimport');
 
     //brand
-}
-});
+    });
+};
 
 
 Route::get('{slug}', [SiteController::class, 'index'])->name('site.slug');
+});

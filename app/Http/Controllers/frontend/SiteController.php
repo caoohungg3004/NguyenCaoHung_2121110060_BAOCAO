@@ -12,9 +12,6 @@ use App\Models\Brand;
 
 
 
-
-
-
 class SiteController extends Controller
 {
     public function index($slug = null)
@@ -67,8 +64,8 @@ class SiteController extends Controller
     }
     #Product - TAT CA SAN PHAM
     public function product()
-    {   $list_product=Product::where('status','=',1)->paginate(8);
-
+    {   $list_product=Product::where('status','=',1)->paginate(4);
+        // return $list_product;
         return view('frontend.product',compact('list_product'));
     }
     #Product category
@@ -118,7 +115,8 @@ if (count($list_category2)) {
             return $this->error_404($slug);
         }
         $brandName=$brand->name;
-        $list_product=Product::where([['status', '=', 1], ['brand_id', '=', $brand->id]])->paginate(8);
+        $list_product=Product::where([['status', '=', 1], ['brand_id', '=', $brand->id]])
+        ->paginate(8);
         return view('frontend.product-brand', compact('list_product','brandName'));
     }
     #Product Detail
@@ -200,6 +198,11 @@ return view('frontend.post', compact('list_post'));
         ->limit(9)
         ->get();
         return view('frontend.post-detail', compact('postdetail', 'list_post'));
+    }
+    public function cart()
+    {
+        return view('frontend.cart');
+        
     }
     #Error
     private function error_404($slug)

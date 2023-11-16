@@ -9,7 +9,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Add product</h1>
+                <h1>Thêm Sản Phẩm</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -101,12 +101,12 @@
                             @endif
 
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="price_sale">Giá sale</label>
                             <textarea  name="price_sale" id="price_sale" class="form-control" placeholder="5$">{{old('price_sale')}}</textarea>
 
 
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-md-3">
                         <div class="mb-3">

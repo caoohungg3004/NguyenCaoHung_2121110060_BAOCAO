@@ -21,6 +21,10 @@ class orderController extends Controller
     public function index()
     {
         $list_order= order::where('status','!=',0)->get();
+        // ->join('user','user.id','=',"order.user_id")
+        // ->select('order.id','order.delivery_name','order.delivery_email','order.delivery_phone','order.delivery_address','order.note','order.type','order.status','user.name','order.created_at')
+        // ->orderBy('order.created_at','asc')
+        // ->get();   
         return view('backend.order.index',compact('list_order'));
     }
 

@@ -1,6 +1,5 @@
 <div class="dropdown">
-                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
-                     </button>
+                     
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      @foreach ($menus as $menu)
@@ -13,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="images/LOGO.png"</a>
+    <a class="navbar-brand" href="#"><img src="images/LOGO.png" style="width:100px;"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,32 +21,35 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Giới Thiệu</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Danh mục sản phẩm
-          </a>
-          <ul class="dropdown-menu">
-          @foreach ($menus as $menu)
-                    <x-main-sub-menu :menu="$menu"/>
-                         @endforeach
-            <li><a class="dropdown-item" href="#">Sản phẩm </a></li>
-            <li><a class="dropdown-item" href="#">Sản phẩm VIP</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Ưu Đãi</a>
-        </li>
+        <form class="d-flex" role="search"style="margin-right 200px;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Tìm Kiếm</button>
+        </form>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <li class="nav-item" style="margin-right 200px;">
+          {{-- <a href="{{ route('site.cart') }}"> --}}
+            <i class="fa-solid fa-user"></i>           
+             Đăng Nhập          
+          </a>
+        
+       
+        <li class="nav-item" style="margin-left 300px;">
+          {{-- <a href="{{ route('site.cart') }}"> --}}
+            <i class="fa-solid fa-phone"></i>
+            Thông Tin Liên Hệ 
+           <p> <strong> 1900 6789 </strong></p>
+          </a>
          
+        </li>
+        <li class="nav-item" style="margin-left 400px;">
+          <a href="{{ route('site.cart') }}">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Giỏ Hàng 
+          </a>
+        </li>
+      
+      
+ 
     </div>
   </div>
 </nav>

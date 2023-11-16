@@ -77,7 +77,6 @@ class ProductController extends Controller
         $list_product->category_id= $request->category_id;
         $list_product->brand_id= $request->brand_id;
         $list_product->price= $request->price;
-        $list_product->price_sale= $request->price_sale;
         $list_product->qty= $request->qty;
         $list_product->detail= $request->detail;
         $list_product->metakey= $request->metakey;
@@ -169,7 +168,7 @@ class ProductController extends Controller
         $list_product->category_id= $request->category_id;
         $list_product->brand_id= $request->brand_id;
         $list_product->price= $request->price;
-        $list_product->price_sale= $request->price_sale;
+        // $list_product->price_sale= $request->price_sale;
         $list_product->qty= $request->qty;
         $list_product->detail= $request->detail;
         $list_product->metakey= $request->metakey;

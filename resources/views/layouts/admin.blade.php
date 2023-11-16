@@ -223,6 +223,7 @@
             </ul>
           </li>
         </ul>
+        
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -284,7 +285,40 @@
               <li class="nav-item">
                 <a href="{{ route('order.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>order</p>
+                  <p>Quản Lý Đơn Hàng </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                QUẢN LÝ BÁN HÀNG
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('post.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tất cả đơn hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('topic.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nhập Hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('order.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Xuất hàng</p>
                 </a>
               </li>
             </ul>
@@ -309,7 +343,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('topic.index') }}" class="nav-link">
+                <a href="{{ route('customer.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tất cả khách hàng</p>
                 </a>

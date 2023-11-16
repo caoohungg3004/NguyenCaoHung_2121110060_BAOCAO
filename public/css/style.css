@@ -462,16 +462,29 @@ button {
     width: 100%;
     text-align: center;
 }
-
+.types_text {
+position: relative;
+overflow: hidden;
+}
 .coffee_img img {
     width: 100%;
     float: left;
 }
-
+.types_text  a.buy-now{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color:#fff;
+    padding: 10px 0px;
+    position: absolute;
+    width: 100%;
+}
 .types_text {
     width: 100%;
     float: left;
-    font-size: 22px;
+    font-size: 12px;
     color: #3b3b3b;
     text-align: center;
     font-weight: bold;

@@ -15,8 +15,10 @@
                               </a>
                                 </div>
                               <h3 class="types_text"><a href="{{route('site.slug',['slug'=>$product->slug])}}">{{$product->name}}</a></h3>
-                              <p class="looking_text">{{$product->price}}</p>
-                              <div class="read_bt"><a href="{{route('site.slug',['slug'=>$product->slug])}}">Read More</a></div>
+                              <p class="looking_text fw-bold text-dange">{{number_format("$product->price")}} VNĐ</p>
+                              <div class="read_bt"><a href="{{route('site.slug',['slug'=>$product->slug])}}">Chi Tiết Sản Phẩm</a></div>
+                              <div class="read_bt"><a href="{{route('site.slug',['slug'=>$product->slug])}}"><i class="fa-solid fa-cart-shopping"></i></a></div>
+
                            </div>
                            @endforeach
                         </div>
